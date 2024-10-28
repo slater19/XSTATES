@@ -68,7 +68,7 @@ const XSTATES = () => {
 </select>
     
     <select value={selCities} onChange={(e)=>setSelCities(e.target.value)} className={Styles["dropdown"]}>
-        <option value="" disabled>Select Cities</option>
+        <option value="" disabled>Select City</option>
         {cities.map(cities => 
         <option key={cities} value={cities} >{cities}</option>
     )}
