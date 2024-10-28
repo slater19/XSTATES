@@ -60,14 +60,15 @@ const XSTATES = () => {
         {country.map(country => 
         <option key={country} value={country} >{country}</option>
     )}
-</select>        <select value={selState} onChange={(e)=>setSelState(e.target.value)} disabled={!selCountry} className={Styles["dropdown"]}>
+</select>        
+<select value={selState} onChange={(e)=>setSelState(e.target.value)} disabled={!selCountry} className={Styles["dropdown"]}>
         <option value="" disabled>Select State</option>
         {state.map(state => 
         <option key={state} value={state} >{state}</option>
     )}
 </select>
     
-    <select value={selCities} onChange={(e)=>setSelCities(e.target.value)} className={Styles["dropdown"]}>
+    <select value={selCities} onChange={(e)=>setSelCities(e.target.value)} disabled={!selState} className={Styles["dropdown"]}>
         <option value="" disabled>Select City</option>
         {cities.map(cities => 
         <option key={cities} value={cities} >{cities}</option>
