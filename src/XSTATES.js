@@ -20,11 +20,12 @@ const XSTATES = () => {
         console.error("Error fetching country",err)
         
       });},[]);
+
       useEffect(() => {
         if(selCountry){
-        axios.get("https://crio-location-selector.onrender.com/country=${selCountry}/states")
-        .then(response =>{ setState(response.data)
-            selState(response.data)
+        axios.get(`https://crio-location-selector.onrender.com/country=${selCountry}/states`)
+        .then(response =>{ 
+            setState(response.data)
             setSelState("")
             setCities([])
             setSelCities("")
@@ -38,15 +39,11 @@ const XSTATES = () => {
 
       useEffect(() => {
         if(selCountry && selState){
-        axios.get("https://crio-location-selector.onrender.com/country=${selCountry}state={selState}/cities")
+        axios.get(`https://crio-location-selector.onrender.com/country=${selCountry}/state=${selState}/cities`)
         .then(response =>{ setCities(response.data)
             setCities(response.data)
             setSelCities("")
-
-        })  
-            
-        
-      .catch(err => {
+ }).catch(err => {
         console.error("Error fetching State",err)
         
       })}},[selCountry,selState]);
