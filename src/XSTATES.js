@@ -75,7 +75,7 @@ const XSTATES = () => {
     )}
 </select></div>
     
-{selCities && <h2 className={Styles["res"]}>You selected<span className={Styles["highlight"]}>{selCities}</span>,<span className={Styles["highlight"]}>{" "}{selState},{selCountry}</span></h2>}
+{selCities && <h2 className={Styles["res"]}>You selected <span className={Styles["highlight"]}>{selCities}</span>,<span className={Styles["highlight"]}>{" "}{selState}, {selCountry}</span></h2>}
     </div>
   )
 }
